@@ -4,7 +4,7 @@ const path = require('path');
 var compression = require('compression');
 app.use(compression());
 
-app.use(express.static(path.join(__dirname,"build")));
+app.use(express.static(path.join(__dirname,"build"),{ maxage: '365d' }));
 // app.use(express.static(path.join(__dirname,"Public","images")))
 
 // app.use(express.static('Public'));
