@@ -1,0 +1,390 @@
+
+
+$color:#ffb606;
+$color1: white;
+
+
+@mixin myBtn($padding,$margin){
+	margin:$margin;
+	padding: $padding;
+	border:none;
+	background: $color;
+	color: $color1;
+	cursor:pointer;
+}
+
+
+
+a{
+	text-decoration: none !important;
+	color: $color1;
+}
+i{
+	color: $color;
+}
+a:hover{
+	color: $color1;
+}
+
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+button:focus,
+.uneditable-input:focus {   
+	outline: 0 none;
+}
+
+
+
+
+
+////////  Container BOdy
+.sticky {
+  position: fixed !important;
+  top: 0 !important;
+  width: 100%
+}
+#header{
+	position: relative;
+	background: url('../images/register-bg.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	width:100%;
+	min-height:100vh;
+	
+	
+	
+	#overlay{
+		position:absolute;
+		background: rgba(0, 30, 50, 0.6);
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		width:100%;
+		height:100%;
+	}
+
+	.container{
+		z-index: 10;
+		padding-top: 250px;
+		padding-bottom:210px;
+		}
+	
+
+	form{
+		background: $color1;
+		padding: 40px 70px 70px 70px;
+	}
+	input[type='text'], input[type='password']{
+		width:100%;
+		padding:9px 10px;
+		box-shadow:2.121px 2.121px 7px 0 rgba(0, 0, 0, 0.1);
+		border:1px solid #eeeeee;
+	}
+	.col-md-12:nth-child(odd){
+		margin-top:20px;
+		margin-bottom: 5px;
+	}
+	button{
+		@include myBtn(7px 50px, 10px 0 0 0);
+	}
+
+
+	.loginDes {
+		color:$color1;
+		margin-top: 150px;
+
+		button{
+			@include myBtn(7px 30px, 20px 0 0 0)
+		}
+
+	}
+}
+
+
+
+////////// Header Top
+#headerTop{
+	color:$color1;
+	position:absolute;
+	z-index: 1;
+	width:100%;
+	.link1 a:nth-of-type(2){
+		padding-left:40px;
+	}
+
+	#language{
+		padding-right:40px;
+	}
+	
+	i{
+		padding-right:8px;
+	}
+	.col-sm-6{
+		padding-top: 10px;
+	}
+
+}
+
+
+//////////  Navbar
+
+.navbar{
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	top: 50px;
+	background: rgba(0, 0, 0, 0.2);
+
+	.dropdown-menu.show, .navbar-nav .dropdown-menu{
+		background: $color1 !important;
+		border-radius: 0;
+	}
+
+	.navbar-nav{
+		margin-left:30px;
+	}
+
+	li.nav-item{
+		padding: 5px 15px ; 
+	}
+
+	li.nav-item>a{
+		font-weight:500;
+	}
+
+	li.nav-item a:hover{
+		color: $color;
+		transition: all 0.1s linear;
+	}
+	.dropdown-item.active, .dropdown-item:active{
+		background-color: #efefef;
+	}
+
+	
+	
+		////////////////  Sidebar Animation
+		#sidebarCollapse span {
+			width: 30px;
+			height: 3px;
+			margin-top: 8px !important;
+			margin-bottom:8px !important;
+			display: block;
+			background: white;
+			transition: all 0.8s cubic-bezier(0.81, -0.33, 0.345, 1.375);
+		}
+
+		#sidebarCollapse.active span:nth-of-type(1) {
+			transform: rotate(315deg) translate(-9px, 9px);
+		}
+		#sidebarCollapse.active span:nth-of-type(2) {
+			opacity: 0;
+		}
+		#sidebarCollapse.active span:nth-of-type(3) {
+			transform: rotate(-315deg) translate(-6px, -6px);
+		}
+
+	}
+
+
+
+// Form search Popover
+
+
+.searchInput{
+	border:none;
+	width:245px;
+}
+
+.searchInput:focus{
+	border:none !important;
+}
+
+.popover-body{
+	border:4px solid $color;
+}
+.popover.bs-popover-auto[x-placement^=bottom] .arrow::after, .popover.bs-popover-bottom .arrow::after{
+	top: calc((.8rem - 8px) * -1);
+	margin-left: -0.5rem;
+}
+.popover.bs-popover-auto[x-placement^=bottom] .arrow::before, .popover.bs-popover-bottom .arrow::before{
+	top: -0.3rem;
+	margin-left: -.5rem;
+}
+.form-inline{
+	width: 250px !important;
+}
+// / Form search Popover
+
+
+
+
+@media (max-width:768px){
+
+	.link2{
+		text-align:left !important;
+	
+	}
+	.navbar{
+		top:83px;
+	}
+
+	#header{
+		.container{
+			padding-top:110px;
+			padding-bottom:100px;
+		}
+		form{
+			margin-top:30px;
+		}
+
+	}
+}
+//Button uptop
+footer{
+	position: relative;
+}
+#myBtn {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	border: none;
+	outline: none;
+	background: rgba(102, 102, 102, 0.2);
+	;
+	color: white;
+	cursor: pointer;
+	padding: 20px;
+	border-radius: 0px;
+	i {
+		padding: 0 !important;
+	}
+}
+#myBtn:hover {
+	background: $color;
+	transition: 0.1s linear;
+	i {
+		color: $color1;
+	}
+}
+
+
+
+
+
+////////////////////////////////// Responsive
+
+
+
+// Animation Dropdown 
+
+@media (max-width:991px){
+	.navbar-expand-md .navbar-nav .nav-link{
+		font-size:0.8rem !important;
+	}
+}
+
+@media(max-width:812px){
+    .navbar-brand h1 {
+        margin-bottom: 4px;
+        font-size: 28px;
+	}
+	.navbar li.nav-item {
+		padding: 5px 10px;
+	}
+	#header .caption1 h3, #header .caption2 h3{
+        font-size: 21px;
+	}
+	#content #introduce .left{
+        margin-top: 85px;
+	}
+	#header .container{
+        padding-top: 170px;
+
+    }
+    #header .loginDes{
+		margin-top:0;
+		margin-bottom: 60px;
+
+	}
+	#header .col-lg-6:first-of-type{
+        margin-top: 0;
+        margin-bottom: 60px;
+    }
+}
+
+
+@media (min-width:768px){
+	.dropdown-menu{
+		transition: all 0.1s linear;
+		opacity: 0;
+		display: block;
+		visibility: hidden;
+	}
+	.dropdown:hover .dropdown-menu {
+		visibility: visible;
+		opacity: 1;
+	}
+	
+}
+
+@media (max-width:768px){
+	#header .loginDes{
+		margin-top: 50px;
+		text-align: center;
+	}
+	#header form{
+		background: #fff;
+		padding: 50px 70px 44px;
+		max-width: 474px;
+		margin: 0 auto;
+		margin-top: 67px !important;
+	}
+}
+
+@media(max-width:736px){
+    #Search{
+        right: 175px;
+	}
+	#container .page-title, #container .page-title-btn{
+        width: 330px;
+        text-align: center;
+	}
+	.link1{
+        padding-left: 0;
+    }
+}
+
+@media (max-width:414px){
+	#header form{
+		padding: 50px 40px 44px;
+	}
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+$color-error: #d50000;
+
+#username-error,#password-error,#fullname-error,#email-error,#password2-error,#fullname2-error,#email2-error,#phone-error,#phone2-error,#idCourse-error,#nameCourse-error,#desCourse-error,#nameCourse2-error,#desCourse2-error{
+    color: $color-error;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+#username.error,#password.error,#fullname.error,#email.error,#password2.error,#fullname2.error,#email2.error,#phone.error,#phone2.error,#idCourse.error,#nameCourse.error,#desCourse.error,#nameCourse2.error,#desCourse2.error{
+    border: 1px solid$color-error !important;
+}

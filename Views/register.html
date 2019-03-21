@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- Hiển thị từng loại thiết bị cho thích hợp -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+
+<body>
+
+	<div id="headerTop">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-6 link1">
+					<a href="#">
+						<i class="fa fa-envelope-o" aria-hidden="true"></i>
+						<span>course@edu.vn</span>
+					</a>
+					<a href="#">
+						<i class="fa fa-phone" aria-hidden="true"></i>
+						<span>+84 1234567</span>
+					</a>
+				</div>
+
+				<div class="col-sm-6 text-right link2">
+					<span id="language">
+						<i class="fa fa-globe" aria-hidden="true"></i>
+						<span>Vietnamese</span>
+					</span>
+
+					<a href="/login">
+						<i class="fa fa-unlock-alt" aria-hidden="true"></i>
+						<span>Đăng Nhập</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Navbar navigation-->
+	<nav class="navbar navbar-expand-md" id="myNav">
+		<div class="container">
+
+			<!-- Brand -->
+			<a class="navbar-brand" href="/">
+				<h1>Group One</h1>
+			</a>
+
+
+			<!-- Button Collapse -->
+			<div class="row">
+				<div class="col-12 text-right">
+					<div class="navbar-header">
+						<button id="sidebarCollapse" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- /Button Collapse -->
+
+
+			<!-- navigation-->
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="/">TRANG CHỦ</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#aboutme">GIỚI THIỆU</a>
+					</li>
+
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+							KHÓA HỌC
+						</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="/course">
+								<span>Các khóa học</span>
+							</a>
+
+						</div>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#contact">LIÊN HỆ</a>
+					</li>
+
+				</ul>
+			</div>
+			<!-- /navigation-->
+
+			<!-- Popover Search1 -->
+			<div id="Search" data-placement="bottom" data-toggle="popover" data-container="body" data-html="true">
+				<i class="fa fa-search" href="#" id="login"></i>
+				<div id="popover-content">
+					<form action="/course" method="post" class="form-inline" role="form">
+						<div class="form-group">
+							<input class="searchInput" type="text" placeholder="What do you want to learn today?">
+						</div>
+					</form>
+					<div id="load" class="text-center pt-1">
+						<div class="pr-1 preloader2">
+							<div class="loader2">
+								<span style="visibility:hidden">L</span>
+							</div>
+						</div>
+					</div>
+					<div id="oknha"></div>
+				</div>
+			</div>
+			<!-- /Popover Search -->
+
+		</div>
+		<!-- /Container -->
+	</nav>
+	<!-- /Navbar navigation-->
+
+
+	<!-- Header -->
+	<section id="header" style="overflow: hidden">
+		<div id="overlay"></div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 wow fadeInLeft" data-wow-delay="0s">
+
+					<h2>Register to Have the Access</h2>
+					<p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+						aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+					<a href="/login">
+						<button>Already have an Account?</button>
+					</a>
+
+				</div>
+				<div class="col-lg-6 wow fadeInRight" data-wow-delay="0s">
+					<form id="registerform" method="POST">
+						<h1 class="text-center">Đăng Ký</h1>
+						<div class="row">
+							<div class="col-md-12">
+								<span>Tài Khoản</span>
+							</div>
+							<div class="col-md-12">
+								<input type="text" minlength="5" maxlength="15" class="taikhoan" id="taikhoan" name="taikhoan" placeholder="Tài khoản">
+							</div>
+
+							<div class="col-md-12">
+								<span>Mật Khẩu</span>
+							</div>
+							<div class="col-md-12">
+								<input type="password" minlength="8" maxlength="15" id="matkhau" name="matkhau" placeholder="Mật khẩu">
+							</div>
+
+							<div class="col-md-12">
+								<span>Nhập lại Mật Khẩu</span>
+							</div>
+							<div class="col-md-12">
+								<input type="password" minlength="8" maxlength="15" id="rematkhau" name="rematkhau" placeholder="Nhập lại Mật khẩu">
+							</div>
+
+							<div class="col-md-12">
+								<span>Họ Tên</span>
+							</div>
+							<div class="col-md-12">
+								<input type="text" minlength="4" maxlength="20" id="hoten" class="hoten" name="hoten" placeholder="Họ Tên">
+							</div>
+
+							<div class="col-md-12">
+								<span>Email</span>
+							</div>
+							<div class="col-md-12">
+								<input id="email" type="email" name="email" placeholder="Email">
+							</div>
+							<div class="col-md-12">
+								<span>Số Điện Thoại</span>
+							</div>
+							<div class="col-md-12">
+								<input type="number" minlength="10" maxlength="11" id="sodt" name="sodt" placeholder="Số Điện Thoại">
+							</div>
+							<div class="col-md-12 text-center mt-4">
+								<button type="submit" id="register">
+									<div class="pr-1 preloader">
+										<div class="loader">
+											<span style="visibility:hidden">L</span>
+										</div>
+									</div>
+
+									Đăng Ký</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /Header -->
+	<footer>
+		<button id="myBtn" title="Go to top">
+			<i class="fa fa-arrow-up fa-1x"></i>
+		</button>
+	</footer>
+
+	
+</body>
+
+</html>

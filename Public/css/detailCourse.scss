@@ -1,0 +1,267 @@
+#DetailCourse {
+    padding: 100px 0;
+    color: #666666 !important;
+}
+#DetailCourse a {
+    color: #666666;
+}
+#DetailCourse .info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #eeeeee;
+    padding: 20px 0;
+}
+#DetailCourse .info i {
+    color: #666666;
+}
+#DetailCourse .info .nameTeacher {
+    color: #ffb606;
+}
+#DetailCourse .info .title {
+    color: #333333;
+}
+#DetailCourse .info .checked {
+    color: #ffb606;
+}
+#DetailCourse .btnEnroll {
+    width: 100% !important;
+    padding: 10px 0 10px 0 !important;
+    background: #333333;
+    color: #fff;
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+#DetailCourse .btnEnroll:hover {
+    background: #ffb606;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background: none;
+    border-radius: 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    border-bottom: 1px solid #ffb606;
+}
+
+.nav.nav-pills {
+    border-bottom: 1px solid #eeeeee;
+    margin-top: 20px;
+}
+.nav.nav-pills a.nav-link {
+    color: #333333 !important;
+    font-weight: 500;
+}
+.nav.nav-pills .nav-item {
+    padding-right: 20px;
+}
+
+.tab-content > .active {
+    margin-top: 30px;
+    padding-left: 0;
+}
+
+#menu2 ul {
+    padding: 0;
+}
+#menu2 li {
+    list-style-type: none;
+}
+#menu2 .imgPerson,
+#menu2 .nameDate {
+    display: table-cell;
+    vertical-align: top;
+}
+#menu2 .btnRep {
+    position: absolute;
+    right: 0;
+    top: 26px;
+}
+#menu2 .imgPerson {
+    padding-right: 20px;
+}
+#menu2 h5 {
+    padding-top: 10px;
+}
+#menu2 h6 {
+    color: #666666;
+}
+#menu2 .commentBody {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+#menu2 button {
+    padding: 5px 10px 5px 15px !important;
+    background: #ffb606;
+    color: #fff;
+    border: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+#menu2 i {
+    color: white;
+}
+#menu2 .leaveComment h5 {
+    border-bottom: 1px solid #eeeeee;
+    line-height: 50px;
+}
+#menu2 .leaveComment input,
+#menu2 .leaveComment textarea {
+    border: 1px solid #eeeeee;
+    padding: 6px 20px;
+    width: 100%;
+}
+#menu2 .leaveComment .btnComment {
+    width: 100%;
+    padding: 7px 10px 7px 10px !important;
+}
+
+#headerTop .col-sm-6 {
+    padding-top: 10px;
+}
+
+#myList li {
+    }
+
+// #loadMore {
+//   color: #ffb606;
+//   cursor: pointer;
+//   display: none;
+//   transition: all 0.2s ease; 
+// }
+
+#loadMore:hover {
+    color: black;
+}
+
+#ulKhoaHoc {
+    display: flex;
+    justify-content: space-between;
+}
+#ulKhoaHoc #viewCourse {
+    color: #333333;
+    background: none;
+    border: 1px solid #eeeeee;
+    padding: 3px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+#ulKhoaHoc #viewCourse:hover {
+    background: #ffb606;
+    color: #fff;
+    border: 1px solid #ffb606;
+}
+
+
+
+/*# sourceMappingURL=DetailCourse.css.map */
+
+
+
+@media (max-width: 1024px){
+  .page-title-btn{
+    padding: 14px 0;
+  }
+}
+
+
+@media(max-width:812px){
+    .navbar-brand h1 {
+        margin-bottom: 4px;
+        font-size: 28px;
+    }
+    .navbar li.nav-item {
+        padding: 5px 10px;
+    }
+    #header .caption1 h3, #header .caption2 h3{
+        font-size: 21px;
+    }
+    #content #introduce .left{
+        margin-top: 85px;
+    }
+    #header .container{
+        padding-top: 170px;
+
+    }
+    #header .loginDes{
+        margin-top:0;
+        margin-bottom: 60px;
+
+    }
+    #header .col-lg-6:first-of-type{
+        margin-top: 0;
+        margin-bottom: 60px;
+    }
+}
+
+
+
+@media (max-width: 768px){
+  #DetailCourse .info .title{
+    font-size: 17px !important;
+    font-weight: 500;
+  }
+  .info span{
+    padding-left: 0;
+  }
+  span.nameCourse, span.numberStudent,  span.nameTeacher{
+    font-size: 16px;
+    padding-top: 4px;
+  }
+  #DetailCourse .info .checked{
+    font-size: 15px;
+    margin-left: 3px;
+  }
+}
+
+@media(max-width:736px){
+    #Search{
+        right: 175px;
+    }
+    #container .page-title, #container .page-title-btn{
+        width: 330px;
+        text-align: center;
+    }
+    .link1{
+        padding-left: 0;
+    }
+}
+
+
+@media (min-width: 576px) {
+  .modal-dialog {
+      max-width: 80%;
+      margin: 30px auto;
+  }
+}
+
+@media (max-width:414px){
+  #container .page-title{
+    width: 300px;
+    text-align: center;
+  }
+  #DetailCourse{
+    padding:50px 0;
+  }
+  .order-md-2{
+    margin-bottom:50px;
+  }
+  .tab-content>.active{
+    padding-left: 15px;
+  }
+  .nameDate{
+    span{
+      font-size: 13px;
+    }
+  }
+  #container .page-title-btn{
+    width: 240px;
+  }
+}

@@ -1,0 +1,13 @@
+
+$color-error: #d50000;
+
+#taikhoan-error, #password-error, #matkhau-error, #hoten-error, #email-error, #sodt-error, #rematkhau-error,#newPass-error,#reNewPass-error,#oldPass-error,#errorOldPass{
+    color: $color-error;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+#taikhoan.error, #password.error, #matkhau.error, #hoten.error, #email.error, #sodt.error, #rematkhau.error,#newPass.error,#reNewPass.error,#oldPass.error,#oldPass.error{
+    border: 1px solid$color-error !important;
+}
+
