@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Hiển thị từng loại thiết bị cho thích hợp -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link href="vendors.css" rel="stylesheet"><link href="bundleDetailCourse.css" rel="stylesheet"></head>
+
+<body>
+
+
+    <div id="headerTop">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-6 link1">
+                    <a href="#">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <span>course@edu.vn</span>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <span>+84 1234567</span>
+                    </a>
+                </div>
+
+                <div class="col-sm-6 text-right link2">
+                    <span id="language">
+                        <i class="fa fa-globe" aria-hidden="true"></i>
+                        <span>Vietnamese</span>
+                    </span>
+
+                    <a id="logout" href="/login">
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                        <span>Đăng Nhập</span>
+                    </a>
+                    <a id="login" href="/user">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>Xin chào,</span>
+                        <span id="name"></span>
+                    </a>
+                    <span id="logout2"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar navigation-->
+    <nav class="navbar navbar-expand-md" id="myNav">
+        <div class="container">
+
+            <!-- Brand -->
+            <a class="navbar-brand" href="/">
+                <h1>Group One</h1>
+            </a>
+
+            <!-- Button Collapse -->
+            <div class="row">
+                <div class="col-12 text-right">
+                    <div class="navbar-header">
+                        <button id="sidebarCollapse" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- /Button Collapse -->
+
+
+            <!-- navigation-->
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aboutme">GIỚI THIỆU</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            KHÓA HỌC
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/course">
+                                <span>Các khóa học</span>
+                            </a>
+                           
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">LIÊN HỆ</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /navigation-->
+
+            <!-- Popover Search1 -->
+            <div id="Search" data-placement="bottom" data-toggle="popover" data-container="body" data-html="true">
+                <i class="fa fa-search" href="#" id="login"></i>
+                <div id="popover-content">
+                    <form action="ok" method="post" class="form-inline" role="form">
+                        <div class="form-group">
+                            <input class="searchInput" type="text" placeholder="What do you want to learn today?">
+                        </div>
+                    </form>
+                    <div id="load" class="text-center pt-1">
+							<div class="pr-1 preloader2">
+								<div class="loader2">
+									<span style="visibility:hidden">L</span>
+								</div>
+							</div> 
+					</div>
+                    <div id="oknha"></div>
+                </div>
+            </div>
+            <!-- /Popover Search -->
+
+        </div>
+        <!-- /Container -->
+    </nav>
+    <!-- /Navbar navigation-->
+
+
+    <!-- Header -->
+    <section id="header">
+        <div id="overlay"></div>
+        <div class="container">
+        </div>
+    </section>
+    <!-- /Header -->
+
+    <!-- Container Body -->
+    <div class="container">
+
+        <!-- Page title -->
+        <section id="container">
+            <h2 class="page-title text-white">Chi Tiết Khóa Học</h2>
+            <ul class="page-title-btn d-flex justify-content-center">
+                <li>
+                    <a href="/">Home</a>
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </li>
+                <li>
+                    <a href="#">Chi tiết khóa học</a>
+                </li>
+            </ul>
+        </section>
+        <!-- /Page title -->
+
+
+        <!-- Infomation User -->
+        <section id="DetailCourse">
+            <div class="row">
+                    <div class="col-md-4 order-md-2">
+                            <div class="info">
+                                <span>
+                                    <span class="title">Giảng Viên</span>
+                                </span>
+                                <span class="nameTeacher"></span>
+                            </div>
+                            <div class="info">
+                                <span>
+                                    <span class="title">Tên Khóa</span>
+                                </span>
+                                <span class="nameCourse"></span>
+                            </div>
+                            <div class="info">
+                                <span>
+                                    <span class="title">Đã Tham Gia</span>
+                                </span>
+                                <span class="numberStudent">10 người</span>
+                            </div>
+                            <div class="info">
+                                <span>
+                                    <span class="title">Mức Độ</span>
+                                </span>
+                                <span class="numberStudent">Trung Bình</span>
+                            </div>
+                            <div class="info">
+                                <span>
+                                    <span class="title">Đánh Giá</span>
+                                </span>
+                                <span class="scoreView d-flex align-items-center justify-content-center">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </span>
+                            </div>
+                            <div class="text-center">
+                                <button type="button" class="btnEnroll">
+                                        <div class="pr-1 preloader">
+                                                <div class="loader">
+                                                    <span style="visibility:hidden">L</span>
+                                                </div>
+                                            </div> 
+                                Ghi danh</button>
+                            </div>
+                    </div>
+                <div class="col-md-8 order-md-1">
+                    <img class="img-fluid imgCourse" alt="">
+                    <!-- Nav pills -->
+                    <ul class="nav nav-pills" id="navpill">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="pill" href="#home">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="pill" href="#menu1">Chi tiết</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="pill" href="#menu2">Bình luận</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active container" id="home">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
+                            <br>
+                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                            esse cillum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                            in voluptate velit esse cillum.
+                        </div>
+                        <div class="tab-pane container" id="menu1">
+                            <ul id="ulKhoaHoc">
+                                <li>
+                                    Bài học 1
+                                </li>
+                                <li>
+                                    <button id="viewCourse" data-toggle="modal" data-target="#myModal">Xem chi tiết</button>
+                                    <!-- The Modal -->
+                                    <div class="modal fade" id="myModal">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div id="linkCourse"></div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane container" id="menu2">
+                            <div class="person-comment">
+                                <!-- Person comment -->
+
+                                <div class="row">
+                                    <ul id="myList">
+                                        <li>
+                                            <div class="col-md-12">
+                                                <div class="imgPerson">
+                                                    <img class="img-fluid" src="./images/comment-person.png" alt="">
+                                                </div>
+                                                <div class="nameDate">
+                                                    <h5>Beautiful Girl</h5>
+                                                    <span>12th Feb, 2017 at 05:56 pm</span>
+                                                </div>
+                                                <div class="btnRep">
+                                                    <button>
+                                                        <i class="fa fa-reply"></i>
+                                                        Trả lời
+                                                    </button>
+                                                </div>
+                                                <div class="commentBody">
+                                                    <span>
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                                        nisi ut aliquip ex ea commodo.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+
+                                    <!-- Comment -->
+                                    <div class="col-md-12 mt-4">
+                                        <!-- <div id="loadMore">Xem thêm...</div> -->
+                                        <div class="leaveComment">
+                                            <h5>Bình luận</h5>
+                                            <div class="row mt-4">
+                                                <div class="col-md-7">
+                                                    <p>
+                                                        <input placeholder="Họ Tên" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <textarea cols="30" rows="4" placeholder="Comment"></textarea>
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <p>
+                                                        <input placeholder="Email" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <input placeholder="SDT" type="text">
+                                                    </p>
+                                                    <p>
+                                                        <button class="btnComment">Gửi bình luận</button>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+              
+            </div>
+        </section>
+        <!-- /Information User-->
+
+    </div>
+    <!-- Container Body -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1>Group One</h1>
+                    <p>Group One là học viện tiên phong tại Việt Nam áp dụng phương pháp đào tạo Active Learning và Flipped
+                        Learning thông qua các dự án thực tiễn trong lĩnh vực đào tạo CNTT. Học viên sẽ đóng vai trò là một
+                        Scrum member trong mô hình Agile để trở thành một lập trình chuyên nghiệp, đáp ứng mọi nhu cầu tuyển
+                        dụng của Doanh nghiệp</p>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <h5>LIÊN HỆ</h5>
+                    <ul>
+                        <li>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> 123 abc Hồ Chí Minh</li>
+                        <li>
+                            <i class="fa fa-phone" aria-hidden="true"></i> +84 123456</li>
+                        <li>
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i> Course@edu.vn</li>
+                    </ul>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <h5>THÔNG TIN</h5>
+                    <ul>
+                        <li>
+                            <a href=""> Khóa Học</a>
+                        </li>
+                        <li>
+                            <a href=""> Giới Thiệu</a>
+                        </li>
+                        <li>
+                            <a href="">Liên Hệ</a>
+                        </li>
+                        <li>
+                            <a href="">FAQs</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div id="footer2" class="text-center">
+                <ul>
+                    <li class="text-center">
+                        <i class="fa fa-facebook"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-google"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-twitter"></i>
+                    </li>
+                </ul>
+                <p>Copyright 2018. Designed by
+                    <span class="name">Group One</span> Studio. All Rights Reserved.</p>
+            </div>
+
+        </div>
+        <button id="myBtn" title="Go to top">
+            <i class="fa fa-arrow-up fa-1x"></i>
+        </button>
+    </footer>
+
+<script type="text/javascript" src="vendors.js"></script><script type="text/javascript" src="bundleDetailCourse.js"></script></body>
+
+</html>

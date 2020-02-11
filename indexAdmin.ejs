@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- Hiển thị từng loại thiết bị cho thích hợp -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+	
+
+<link href="vendors.css" rel="stylesheet"><link href="bundleAdmin.css" rel="stylesheet"></head>
+
+<body>
+
+	<div class="wrapper">
+
+		<!-- <div class="overlay"></div> -->
+
+		<!-- Header nav -->
+		<nav class="navbar navbar-default">
+			<div class="navbar-header d-flex">
+				<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<div>
+					<h5 id="namePanel" class="text-white mt-2 ml-4 pt-1 pl-2">Admin Panel</h5>
+				</div>
+			</div>
+
+			<div class="clock">
+				<div class="time">
+				</div>
+			</div>
+		</nav>
+		<!-- /Header nav -->
+
+
+
+		<!-- Sidebar Left -->
+		<nav id="sidebar">
+			<div class="sidebar-header">
+				<div class="row">
+					<div class="col-md-4">
+						<img class="img-fluid" src="./images/img_avatar.png" alt="a">
+					</div>
+					<div class="col-md-8" id="info">
+						<p>Xin Chào,</p>
+						<p id="nameAdmin"></p>
+					</div>
+					<div class="col-md-12 icon text-center">
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+						<i class="fa fa-user" aria-hidden="true"></i>
+						<i class="fa fa-cog" aria-hidden="true"></i>
+					</div>
+					<div class="row">
+						<div class="col-md-12 mt-3" id="searchInput">
+							<input id="search" type="text" placeholder="Search">
+							<i class="fa fa-search" aria-hidden="true"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<ul class="nav nav-pills list-unstyled components" id="navpill">
+				<h4 class="ml-3">Dashboard</h4>
+				<li class="nav-item">
+					<a class="nav-link active" data-toggle="pill" href="#home">
+						<i class="fa fa-dot-circle-o" aria-hidden="true"></i>Home</a>
+
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="pill" href="#ManageUser">
+						<i class="fa fa-users" aria-hidden="true"></i>Manage User</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="pill" href="#ManageCourse">
+						<i class="fa fa-book"></i>Manage Course</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="pill" href="#Schedule">
+						<i class="fa fa-bar-chart" aria-hidden="true"></i>Schedule</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" id="logoutAdmin">
+						<i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a>
+				</li>
+			</ul>
+
+
+		</nav>
+		<!-- /Sidebar left -->
+
+
+		<!-- Content -->
+		<div id="content">
+			<!-- Container-fluid -->
+			<div class="container-fluid">
+
+				<div class="tab-content">
+
+					<!-- Dashboard -->
+					<div class="tab-pane active" id="home">
+
+						<div class="row">
+							<div class="col-md-12">
+								<h3 class="pt-3 pb-3">My Dashboard</h3>
+							</div>
+						</div>
+
+
+						<div class="thongke">
+							<div class="row">
+
+								<div class="col-xl-3 col-md-6">
+									<div class="thongkehv d-flex justify-content-between">
+										<div>
+											<h5 class="m-0" id="countHocVien"></h5>
+											<small>Tổng học viên</small>
+										</div>
+										<i class="fa fa-users fa-3x ml-5"></i>
+									</div>
+								</div>
+
+								<div class="col-xl-3 col-md-6">
+									<div class="thongkehv d-flex justify-content-between">
+										<div>
+											<h5 class="m-0" id="countKhoaHoc"></h5>
+											<small>Tổng khóa học</small>
+										</div>
+										<i class="fa fa-book fa-3x ml-5"></i>
+									</div>
+								</div>
+
+								<div class="col-xl-3 col-md-6">
+									<div class="thongkehv d-flex justify-content-between">
+										<div>
+											<h5 class="m-0">249,504$</h5>
+											<small>Tổng doanh thu</small>
+										</div>
+										<i class="fa fa-credit-card fa-3x ml-5"></i>
+									</div>
+								</div>
+
+								<div class="col-xl-3 col-md-6">
+									<div class="thongkehv d-flex justify-content-between">
+										<div>
+											<h5 class="m-0">15,040</h5>
+											<small>Số lượt truy cập</small>
+										</div>
+										<i class="fa fa-eye fa-3x ml-5"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="thongkeChart">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="chart1">
+										<div id="chartCourse" style="height: 350px; width: 100%;"></div>
+									</div>
+								</div>
+								<div class="col-md-8">
+									<div class="chart2">
+										<div class="row">
+											<div class="col-md-12">
+												<div id="chartAvenue" style="height: 350px; width: 99%;"></div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+
+								<div class="col-md-7">
+									<div class="realtimeChart">
+										<div class="row">
+											<div class="col-md-12 text-center">
+												<h5>Thống kê Lượng truy cập</h5>
+											</div>
+											<div class="col-md-12 text-center">
+												<small>Thời gian thực</small>
+											</div>
+										</div>
+
+
+										<div class="row">
+											<div class="col-md-6 divView">
+												<div class="numberView">
+													<h5 class="m-0">235,040</h5>
+													<small>Lượt xem 24 giờ trước</small>
+												</div>
+
+											</div>
+											<div class="col-md-6 divView">
+												<div class="numberView">
+													<h5 class="m-0">750</h5>
+													<small>Lượt xem 30 phút trước</small>
+												</div>
+											</div>
+										</div>
+
+
+										<div class="row mt-3">
+											<div class="col-md-12">
+												<div id="vmap" style="height: 320px"></div>
+											</div>
+										</div>
+									</div>
+
+									<div class="chartPie">
+										<div class="row">
+											<div class="col-md-4 col1">
+												<div class="divChart1">
+													<span class="chart" data-percent="80">
+														<span class="percent"></span>
+													</span>
+													<small class="pb-3 textchart">
+														Email Scheduled
+													</small>
+												</div>
+											</div>
+											<div class="col-md-4 col2">
+												<div class="divChart2">
+													<span class="chart" data-percent="20">
+														<span class="percent"></span>
+													</span>
+													<small class="pb-3 textchart">
+														Email Bounced
+													</small>
+												</div>
+											</div>
+											<div class="col-md-4 col3">
+												<div class="divChart3">
+													<span class="chart" data-percent="14">
+														<span class="percent"></span>
+													</span>
+													<small class="pb-3 textchart">
+														Email Opened
+													</small>
+												</div>
+											</div>
+											<div class="col-md-4 col4">
+												<div class="divChart4">
+													<span class="chart" data-percent="46">
+														<span class="percent"></span>
+													</span>
+													<small class="pb-3 textchart">
+														Storage Remaining
+													</small>
+												</div>
+											</div>
+											<div class="col-md-4 col5">
+												<div class="divChart5">
+													<span class="chart" data-percent="64">
+														<span class="percent"></span>
+													</span>
+													<small class="pb-3 textchart">
+														Web Page Views
+													</small>
+												</div>
+											</div>
+											<div class="col-md-4 col6">
+												<div class="divChart6">
+													<span class="chart" data-percent="25">
+														<span class="percent"></span>
+													</span>
+													<small class="pb-3 textchart">
+														Server Processing
+													</small>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="col-md-5 mb-0">
+									<div class="mess">
+										<div class="row">
+											<div class="col-md-12 text-center">
+												<h5>Tin nhắn thông báo</h5>
+											</div>
+											<div class="col-md-12 text-center">
+												<small>Thông báo tin nhắn</small>
+											</div>
+										</div>
+										<div class="row mt-4">
+											<div class="col-md-12">
+												<div class="divThonBao d-flex">
+													<span class="dauchamthan">
+														<i class="fa fa-check" aria-hidden="true"></i>
+													</span>
+													<div class="pt-1 pl-3">
+														<p> Hi, Khóa học good!</p>
+														<small>Hôm nay lúc 8:30</small>
+													</div>
+													<br>
+												</div>
+												<span class="mt-3">#Messenges</span>
+												<span>!!!</span>
+											</div>
+
+											<div class="col-md-12 mt-4">
+												<div class="divThonBao d-flex">
+													<span class="dauchamthan">
+														<i class="fa fa-check" aria-hidden="true"></i>
+													</span>
+													<div class="pt-1 pl-3">
+														<p> Hello, đi chơi hem?</p>
+														<small>Hôm nay lúc 8:30</small>
+													</div>
+													<br>
+												</div>
+												<span class="mt-3">#Messenges</span>
+												<span>!!!</span>
+											</div>
+
+
+											<div class="col-md-12 mt-4">
+												<div class="divThonBao d-flex">
+													<span class="dauchamthan">
+														<i class="fa fa-exclamation" aria-hidden="true"></i>
+													</span>
+													<div class="pt-1 pl-3">
+														<p> Xiaobeibei đăng ký khóa học Angular.</p>
+														<small>Hôm nay lúc 8:30</small>
+													</div>
+													<br>
+												</div>
+												<span class="mt-3">#Clients</span>
+												<span>!!!</span>
+											</div>
+
+											<div class="col-md-12 mt-4">
+												<div class="divThonBao d-flex">
+													<span class="dauchamthan">
+														<i class="fa fa-exclamation" aria-hidden="true"></i>
+													</span>
+													<div class="pt-1 pl-3">
+														<p> truchocvien đăng ký khóa học javascript</p>
+														<small>Hôm nay lúc 8:30</small>
+													</div>
+													<br>
+												</div>
+												<span class="mt-3">#Clients</span>
+												<span>!!!</span>
+											</div>
+
+											<div class="col-md-12 mt-4">
+												<div class="divThonBao d-flex">
+													<span class="dauchamthan">
+														<i class="fa fa-exclamation" aria-hidden="true"></i>
+													</span>
+													<div class="pt-1 pl-3">
+														<p> Hệ thống phát hiện virus !!!</p>
+														<small>Hôm nay lúc 8:30</small>
+													</div>
+													<br>
+												</div>
+												<span class="mt-3">#Server</span>
+												<span>!!!</span>
+											</div>
+											<div class="col-md-12 mt-4">
+												<div class="divThonBao d-flex">
+													<span class="dauchamthan">
+														<i class="fa fa-exclamation" aria-hidden="true"></i>
+													</span>
+													<div class="pt-1 pl-3">
+														<p> Hệ thống quá tải !!!</p>
+														<small>Hôm nay lúc 8:30</small>
+													</div>
+													<br>
+												</div>
+												<span class="mt-3">#Server</span>
+												<span>!!!</span>
+											</div>
+										</div>
+										<div class="text-center mt-4">
+											<button class="xemthem">Xem thêm</button>
+										</div>
+									</div>
+								</div>
+
+
+
+							</div>
+
+						</div>
+					</div>
+
+					<!-- ManageUser -->
+					<div class="tab-pane" id="ManageUser">
+						<h3 class="pt-3 pb-3">Quản Lý Học Viên</h3>
+						<!-- ManageUser2 -->
+						<div id="ManageUser2">
+							<div class="row">
+								<div class="col-sm-6 mt-3" id="searchUser">
+									<input class="search" type="text" placeholder="Tìm kiếm User">
+									<i class="fa fa-search" aria-hidden="true"></i>
+								</div>
+								<div class="col-sm-12 mt-3 mb-2 text-center">
+									<button data-toggle="modal" data-target="#insertUser">Thêm User</button>
+									<button id="delete">Xóa User</button>
+								</div>
+							</div>
+							<!-- divTable -->
+							<div class="table-responsive table-hover">
+								<table class="table" id="userTable">
+									<thead>
+										<tr>
+											<th>
+												<input type="checkbox" id="checkAllHV">
+											</th>
+											<th>Tài Khoản</th>
+											<th>Họ Tên</th>
+											<th>Email</th>
+											<th>Số Điện Thoại</th>
+											<th>Mã Loại</th>
+											<th>Tên Loại</th>
+										</tr>
+									</thead>
+									<tbody id="tbody">
+									</tbody>
+								</table>
+							</div>
+							<!-- divTable -->
+						</div>
+						<!-- ManageUser2 -->
+					</div>
+					<!-- ManageUser -->
+
+
+					<!-- ManageCourse -->
+					<div class="tab-pane" id="ManageCourse">
+						<h3 class="pt-3 pb-3">Quản Lý Khóa Học</h3>
+						<div id="ManageCourse2">
+							<div class="row">
+								<!-- <div class="col-sm-6 mt-3" id="searchCourse">
+									<input class="search" type="text" placeholder="Tìm kiếm Course">
+									<i class="fa fa-search" aria-hidden="true"></i>
+								</div> -->
+								<div class="col-sm-12 mt-3 mb-2 text-center">
+									<button data-toggle="modal" data-target="#insertCourse">Thêm Course</button>
+									<button id="deleteCourse">Xóa Course</button>
+								</div>
+							</div>
+							<!-- divTable -->
+							<div class="table-responsive table-hover">
+								<table class="table" id="courseTable">
+									<thead>
+										<tr>
+											<th>
+												<input type="checkbox" id="checkAllKH">
+											</th>
+											<th>Mã Khóa Học</th>
+											<th>Tên Khóa Học</th>
+											<th>Mô Tả</th>
+											<th>Lượt Xem</th>
+											<th>Người Tạo</th>
+											<th>Hình Ảnh</th>
+										</tr>
+									</thead>
+									<tbody id="tbody2">
+									</tbody>
+								</table>
+							</div>
+							<!-- divTable -->
+						</div>
+						<!-- ManageCourse2 -->
+					</div>
+					<!-- ManageCourse -->
+
+					<div class="tab-pane" id="Schedule">
+						<div class="row">
+							<div class="col-md-12">
+								<h3 class="pt-3 pb-3">Thời khóa biểu</h3>
+							</div>
+							<div class="col-md-12">
+									<div id='calendar'></div>
+								</div>
+							
+						</div>
+
+
+
+					</div>
+				</div>
+				<!-- tab content -->
+			</div>
+			<!-- Container-fluid -->
+		</div>
+		<!-- Content -->
+
+
+
+		<!-- The Modal insert User -->
+		<div class="modal fade" id="insertUser">
+			<div class="modal-dialog">
+				<div class="modal-content">
+
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h4 class="modal-title">Thêm User</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+
+					<!-- Modal body -->
+					<div class="modal-body">
+						<form id="AdRegisterForm" method="POST">
+							<div class="row mx-auto">
+								<div class="col-md-5 text-right pt-3">
+									<span>Tài Khoản</span>
+								</div>
+								<div class="col-md-7 pt-3">
+									<input type="text" minlength="5" maxlength="15" class="username" name="username" id="username" placeholder="Tài khoản">
+								</div>
+								<div class="col-md-5 text-right pt-3">
+									<span>Mật Khẩu</span>
+								</div>
+								<div class="col-md-7 pt-3">
+									<input type="password" minlength="8" maxlength="15" name="password" id="password" placeholder="Mật khẩu">
+								</div>
+								<div class="col-md-5 text-right pt-3">
+									<span>Họ Tên</span>
+								</div>
+								<div class="col-md-7 pt-3">
+									<input type="text" minlength="4" maxlength="20" id="fullname" class="fullname" name="fullname" placeholder="Họ tên">
+								</div>
+
+								<div class="col-md-5 text-right pt-3">
+									<span>Email</span>
+								</div>
+								<div class="col-md-7 pt-3">
+									<input id="email" type="email" name="email" placeholder="Email">
+								</div>
+
+								<div class="col-md-5 text-right pt-3">
+									<span>Số Điện Thoại</span>
+								</div>
+								<div class="col-md-7 pt-3">
+									<input type="number" minlength="10" maxlength="11" id="phone" name="phone" placeholder="Phone">
+								</div>
+
+								<div class="col-md-5 text-right pt-3">
+									<span>Mã Loại</span>
+								</div>
+								<div class="col-md-7 pt-3">
+									<select class="selectLoai1">
+										<option class="hv">HV</option>
+										<option class="gv">GV</option>
+									</select>
+								</div>
+
+								<div class="col-md-5 text-right pt-3">
+									<span>Tên Loại</span>
+								</div>
+								<div class="col-md-7 pt-3">
+									<input type="text" class="tenLoai1" placeholder="Tên loại" readonly>
+								</div>
+
+								<div class="col-md-5"></div>
+								<div class="col-md-5 mt-4 mb-3">
+									<button id="insert" type="submit" class="btn btn-secondary">
+											<div class="pr-1 preloader">
+													<div class="loader">
+														<span style="visibility:hidden">L</span>
+													</div>
+												</div>
+										Thêm User</button>
+								</div> 
+
+							</div>
+						</form>
+					</div>
+
+					<!-- Modal footer -->
+					<!-- <div class="modal-footer">
+						<button id="insert" type="submit" class="btn btn-secondary" data-dismiss="modal">Thêm User</button>
+					</div> -->
+
+				</div>
+			</div>
+		</div>
+		<!-- The Modal insert User -->
+
+
+		<!-- The Modal Update User -->
+		<div class="modal fade" id="updateUser">
+			<div class="modal-dialog">
+				<div class="modal-content">
+
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h4 class="modal-title">Update User</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+
+					<form id="formUpdateUserAd" method="POST">
+					<!-- Modal body -->
+					<div class="modal-body">
+
+						<div class="row mx-auto">
+							<div class="col-md-5 text-right pt-3">
+								<span>Tài Khoản</span>
+							</div>
+							<div class="col-md-7 pt-3">
+								<input type="text" id="username2" name="username2" class="username2" placeholder="Tài Khoản" readonly="readonly">
+							</div>
+							<div class="col-md-5 text-right pt-3">
+								<span>Mật Khẩu</span>
+							</div>
+							<div class="col-md-7 pt-3">
+								<input type="password" id="password2" name="password2" class="password2" placeholder="Mật khẩu">
+							</div>
+							<div class="col-md-5 text-right pt-3">
+								<span>Họ Tên</span>
+							</div>
+							<div class="col-md-7 pt-3">
+								<input type="text" id="fullname2" name="fullname2" class="fullname2" placeholder="Họ tên">
+							</div>
+
+							<div class="col-md-5 text-right pt-3">
+								<span>Email</span>
+							</div>
+							<div class="col-md-7 pt-3">
+								<input type="text" id="email2" name="email2" class="email2" placeholder="Email">
+							</div>
+
+							<div class="col-md-5 text-right pt-3">
+								<span>Số Điện Thoại</span>
+							</div>
+							<div class="col-md-7 pt-3">
+								<input type="number" id="phone2" name="phone2" class="phone2" placeholder="Phone">
+							</div>
+
+							<div class="col-md-5 text-right pt-3">
+								<span>Mã Loại</span>
+							</div>
+							<div class="col-md-7 pt-3">
+								<select class="selectLoai">
+									<option class="hv">HV</option>
+									<option class="gv">GV</option>
+								</select>
+							</div>
+
+							<div class="col-md-5 text-right pt-3">
+								<span>Tên Loại</span>
+							</div>
+							<div class="col-md-7 pt-3">
+								<input type="text" class="tenLoai" placeholder="Tên loại" readonly>
+							</div>
+
+							<div class="col-md-5"></div>
+							<div class="col-md-5 mt-4 mb-3">
+								<button id="update" type="submit" class="btn btn-secondary">
+										<div class="pr-1 preloader">
+												<div class="loader">
+													<span style="visibility:hidden">L</span>
+												</div>
+											</div>
+									Update User</button>
+							</div> 
+
+						</div>
+
+					</div>
+					</form>
+					<div type='butotn' id='update2'>update2</div>
+					<!-- Modal footer -->
+					<!-- <div class="modal-footer">
+						<button id="update" type="button" class="btn btn-secondary" data-dismiss="modal">Update User</button>
+					</div> -->
+
+				</div>
+			</div>
+		</div>
+		<!-- The Modal Update User -->
+
+
+
+		<!-- The Modal insert Course -->
+		<div class="modal fade" id="insertCourse">
+			<div class="modal-dialog">
+				<div class="modal-content">
+
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h4 class="modal-title">Thêm Course</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+
+					<!-- Modal body -->
+					<div class="modal-body">
+						<form method="POST" id="formInsertCourse">
+							<div class="row mx-auto">
+
+								<div class="col-md-5 text-right pt-3">
+									<span>Mã Khóa Học</span>
+								</div>
+								<div class="col-md-7 pt-3">
+									<input type="text" id="idCourse" class="idCourse" name="idCourse" placeholder="Mã khóa học">
+								</div>
+
+								<div class="col-md-5 text-right pt-3">
+									<span>Tên Khóa Học</span>
+								</div>
+								<div class="col-md-7 pt-3">
+									<input type="text" id="nameCourse" class="nameCourse" name="nameCourse" placeholder="Tên khóa học">
+								</div>
+
+								<div class="col-md-5 text-right pt-3">
+									<span>Mô Tả</span>
+								</div>
+								<div class="col-md-7 pt-3">
+									<textarea id="desCourse" name="desCourse" class="desCourse" rows="4" cols="20" placeholder="Thông tin về khóa học..."></textarea>
+								</div>
+
+								<!-- <div class="col-md-5 text-right pt-3">
+									<span>Hình Ảnh</span>
+								</div>
+								<div class="col-md-5 pt-3">
+									<input type="text" id="imgCourse" placeholder="Link">
+								</div> -->
+
+								<div class="col-md-5"></div>
+								<div class="col-md-5 mt-4 mb-3">
+									<button id="btnInsertCourse" type="submit" class="btn btn-secondary">
+											<div class="pr-1 preloader">
+													<div class="loader">
+														<span style="visibility:hidden">L</span>
+													</div>
+												</div>
+										Thêm Course</button>
+								</div> 
+
+							</div>
+						</form>
+					</div>
+
+					<!-- Modal footer -->
+					<!-- <div class="modal-footer">
+						<button id="btnInsertCourse" type="button" class="btn btn-secondary" data-dismiss="modal">Thêm Course</button>
+					</div> -->
+
+				</div>
+			</div>
+		</div>
+		<!-- The Modal insert Course -->
+
+		<!-- The Modal Update Course -->
+		<div class="modal fade" id="updateCourse">
+			<div class="modal-dialog">
+				<div class="modal-content">
+
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h4 class="modal-title">Update Course</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+
+					<form method="POST" id="formUpdateCourse">
+					<!-- Modal body -->
+					<div class="modal-body">
+
+						<div class="row mx-auto">
+							<div class="col-md-5 text-right pt-3">
+								<span>Mã Khóa Học</span>
+							</div>
+							<div class="col-md-7 pt-3">
+								<input type="text" id="idCourse2" class="idCourse2" name="idCourse2" placeholder="Mã khóa học" readonly>
+							</div>
+
+							<div class="col-md-5 text-right pt-3">
+								<span>Tên Khóa Học</span>
+							</div>
+							<div class="col-md-7 pt-3">
+								<input type="text" id="nameCourse2" class="nameCourse2" name="nameCourse2" placeholder="Tên khóa học">
+							</div>
+
+							<div class="col-md-5 text-right pt-3">
+								<span>Mô Tả</span>
+							</div>
+							<div class="col-md-7 pt-3">
+								<textarea id="desCourse2" class="desCourse2" name="desCourse2" rows="4" cols="20" placeholder="Thông tin về khóa học..."></textarea>
+							</div>
+
+							<!-- <div class="col-md-5 text-right pt-3">
+								<span>Hình Ảnh</span>
+							</div>
+							<div class="col-md-5 pt-3">
+								<input type="text" id="imgCourse2" placeholder="Link">
+							</div> -->
+
+
+							<div class="col-md-5 text-right pt-3">
+								<span>Lượt Xem</span>
+							</div>
+							<div class="col-md-5 pt-3">
+								<input type="text" id="viewCourse2" placeholder="Lượt xem" readonly>
+							</div>
+
+							<div class="col-md-5 text-right pt-3">
+								<span>Người Tạo</span>
+							</div>
+							<div class="col-md-5 pt-3">
+								<input type="text" id="createrCourse2" placeholder="Người tạo" readonly>
+							</div>
+
+							<div class="col-md-5"></div>
+								<div class="col-md-5 mt-4 mb-3">
+									<button id="btnUpdateCourse" type="submit" class="btn btn-secondary">
+											<div class="pr-1 preloader">
+													<div class="loader">
+														<span style="visibility:hidden">L</span>
+													</div>
+												</div>
+										Update Course</button>
+							</div> 
+
+						</div>
+
+					</div>
+					</form>
+
+					<!-- Modal footer -->
+					<!-- <div class="modal-footer">
+						<button id="updateCourse2" type="button" class="btn btn-secondary" data-dismiss="modal">Update Course</button>
+					</div> -->
+
+				</div>
+			</div>
+		</div>
+		<!-- The Modal Update Course -->
+
+
+<script type="text/javascript" src="vendors.js"></script><script type="text/javascript" src="bundleAdmin.js"></script></body>
+
+</html>

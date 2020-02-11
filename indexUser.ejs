@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- Hiển thị từng loại thiết bị cho thích hợp -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link href="vendors.css" rel="stylesheet"><link href="bundleUser.css" rel="stylesheet"></head>
+
+<body>
+
+	<div id="headerTop">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-6 link1">
+					<a href="#">
+						<i class="fa fa-envelope-o" aria-hidden="true"></i>
+						<span>course@edu.vn</span>
+					</a>
+					<a href="#">
+						<i class="fa fa-phone" aria-hidden="true"></i>
+						<span>+84 1234567</span>
+					</a>
+				</div>
+
+				<div class="col-sm-6 text-right link2">
+					<span id="language">
+						<i class="fa fa-globe" aria-hidden="true"></i>
+						<span>Vietnamese</span>
+					</span>
+
+					<a id="logout" href="/login">
+						<i class="fa fa-unlock-alt" aria-hidden="true"></i>
+						<span>Đăng Nhập</span>
+					</a>
+					<a id="login" href="/user">
+						<i class="fa fa-user" aria-hidden="true"></i>
+						<span>Xin chào,</span>
+						<span id="name"></span>
+					</a>
+					<span id="logout2"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Navbar navigation-->
+	<nav class="navbar navbar-expand-md" id="myNav">
+		<div class="container">
+
+			<!-- Brand -->
+			<a class="navbar-brand" href="/">
+				<h1>Group One</h1>
+			</a>
+
+
+
+			<!-- Button Collapse -->
+			<div class="row">
+				<div class="col-12 text-right">
+					<div class="navbar-header">
+						<button id="sidebarCollapse" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- /Button Collapse -->
+
+
+			<!-- navigation-->
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href='/'>TRANG CHỦ</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#aboutme">GIỚI THIỆU</a>
+					</li>
+
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+							KHÓA HỌC
+						</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="/course">
+								<span>Các khóa học</span>
+							</a>
+
+						</div>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#contact">LIÊN HỆ</a>
+					</li>
+
+				</ul>
+			</div>
+			<!-- /navigation-->
+
+			<!-- Popover Search1 -->
+			<div id="Search" data-placement="bottom" data-toggle="popover" data-container="body" data-html="true">
+				<i class="fa fa-search" href="#" id="login"></i>
+				<div id="popover-content">
+					<form action="/course" method="GET" class="form-inline" role="form">
+						<div class="form-group">
+							<input class="searchInput" type="text" placeholder="What do you want to learn today?">
+						</div>
+					</form>
+					<div id="load" class="text-center pt-1">
+							<div class="pr-1 preloader2">
+								<div class="loader2">
+									<span style="visibility:hidden">L</span>
+								</div>
+							</div> 
+					</div>
+					<div id="oknha">
+					</div>
+				</div>
+			</div>
+			<!-- /Popover Search -->
+
+
+
+		</div>
+		<!-- /Container -->
+	</nav>
+	<!-- /Navbar navigation-->
+
+
+	<!-- Header -->
+	<section id="header">
+
+
+		<!-- Slider -->
+		<div class="carousel slide" data-ride="carousel" data-interval="7000">
+
+			<!-- Indicators -->
+			<!-- <ul class="carousel-indicators">
+				<li data-target=".slide" data-slide-to="0" class="active"></li>
+				<li data-target="#slide" data-slide-to="1"></li>
+			</ul> -->
+
+			<!-- The slideshow -->
+			<div class="carousel-inner" id="anim">
+				<div class="carousel-item active">
+					<div id="img1" alt=""></div>
+					<div class="caption1">
+						<h3 class="animated fadeInLeft">KHÓA HỌC CÁC NGÔN NGỮ LẬP TRÌNH</h3>
+						<p class="animated fadeInLeft ani">Cùng với các chuyên trong lĩnh vực giỏi nhất thế giới</p>
+					</div>
+
+				</div>
+				<div class="carousel-item">
+					<div id="img2"></div>
+					<div class="caption2">
+						<h3 class="animated fadeInLeft">ĐẠT ĐƯỢC KẾT QUẢ TỐT NHẤT</h3>
+						<p class="animated fadeInUp ani1">- Lộ trình chi tiết có định hướng</p>
+						<p class="animated fadeInUp ani2">- Nền tảng cơ bản, tư duy lập trình</p>
+						<p class="animated fadeInUp ani3">- Làm việc nhóm cùng Mentor</p>
+						<p class="animated fadeInUp ani4">- Tiếp cận công nghệ mới, chuyên sâu</p>
+						<p class="animated fadeInUp ani5">- Dự án thực tế, kinh nghiệm</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Left and right controls -->
+			<a class="carousel-control-prev" href=".slide" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</a>
+			<a class="carousel-control-next" href=".slide" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+			</a>
+
+		</div>
+		<!-- /Slider -->
+
+		<div id="scroll">
+			<a href="#introduce">
+				<span></span>
+			</a>
+		</div>
+
+	</section>
+	<!-- /Header -->
+
+	<div id="bodyContent" class="pt-2">
+		<div class="container" id="content" >
+			<!-- Introduce -->
+			<section id="introduce" class="fadeInUp wow" data-wow-duration="1s">
+				<div class="row">
+					<div class="col-lg-5 img">
+						<img class="img-fluid" src="./images/img2_new.jpg" alt="a">
+						<img class="img-fluid" src="./images/img3_new.jpg" alt="b">
+						<div class="square"></div>
+					</div>
+					<div class="col-lg-7 left">
+						<div class="title">Giới Thiệu</div>
+						<h2 class="text-center">Giới Thiệu</h2>
+
+						<p class="font-weight-bold pt-0">Đã hoạt động trong phần Giáo dục trong hơn 10 năm, chúng tôi có thể giúp bạn trở nên tốt hơn.</p>
+						<p>Chúng tôi là một trung tâm giáo dục quốc tế chuyên về cung cấp chất lượng đào tạo hàng đầu ở nước ngoài cho 500 công
+							ty. Muốn tìm hiểu thêm? Group One là nơi bạn có thể nhanh chóng học những điều mới.</p>
+						<div class="row number">
+							<div class="col-6">
+								<span class='numscroller' data-min='1' data-max='2000' data-delay='5' data-increment='10'>2000</span>
+								<span class="font-weight-bold">Học Viên</span>
+							</div>
+							<div class="col-6">
+								<span class='numscroller' data-min='1' data-max='1500' data-delay='5' data-increment='10'>1500</span>
+								<span class="font-weight-bold">Tốt Nghiệp</span>
+							</div>
+							<div class="col-6 mt-4">
+								<span class='numscroller' data-min='1' data-max='4000' data-delay='5' data-increment='10'>4000</span>
+								<span class="font-weight-bold">Bài Học Miễn Phí</span>
+							</div>
+							<div class="col-6 mt-4">
+								<span class='numscroller' data-min='1' data-max='50' data-delay='5' data-increment='3'>50</span>
+								<span class="font-weight-bold">Lớp Hoạt Động</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</section>
+			<!-- Introduce -->
+
+
+			<!-- Good -->
+			<section id="introduce2" class="fadeInUp wow mt-5 pt-5" data-wow-duration="1s">
+				<div class="row">
+					<div class="col-md-12 center text-center">
+
+						<div class="text-center divTitle">
+							<div class="title">Điểm Nổi Bật</div>
+							<h2 class="text-center">Điểm Nổi Bật</h2>
+						</div>
+						<p class="font-weight-bold pt-0">
+							Chúng tôi biết những gì bạn cần và những gì bạn muốn. Chúng tôi chăm sóc cho bạn và cung cấp cho bạn công cụ nhanh nhất,
+							nhanh chóng tạo ra một khóa học, chia sẻ kiến ​​thức của bạn với thế giới và nhận được một số phần thưởng cho chính
+							bạn. Group One là người bạn tốt nhất của bạn.
+						</p>
+					</div>
+					<div class="col-md-6 left lotrinh text-center wow bounceInDown" data-wow-delay="0.5s">
+						<span class="icon mx-auto">
+							<i class="fa fa-book" aria-hidden="true"></i>
+						</span>
+						<h5 class="r">Học theo lộ trình, có định hướng</h5>
+						<p>CyberSoft sẽ định hướng và đưa ra các lộ trình học tập cho nghề bạn theo đuổi. Phát triển năng lực và niềm đam mê cảm
+							hứng lập trình của bạn.</p>
+
+
+
+					</div>
+					<div class="col-md-6 left lotrinh text-center wow bounceInDown" data-wow-delay="1s">
+						<span class="icon mx-auto">
+							<i class="fa fa-thermometer-full" aria-hidden="true"></i>
+						</span>
+						<h5 class="">Mài giũa bạn qua kinh nghiệm, dự án thực tế</h5>
+						<p>Đội ngũ Giảng viên và các Mentor là những người dày dạn kinh nghiệm qua các dự án thực tế tại các công ty lớn sẽ truyền
+							đạt những kinh nghiệm "máu lửa" cho bạn.</p>
+					</div>
+
+					<div class="col-md-6 text-center lotrinh left2 mx-auto wow bounceInDown" data-wow-delay="1s">
+						<span class="icon mx-auto">
+							<i class="fa fa-qrcode" aria-hidden="true"></i>
+						</span>
+						<h5 class="">Công nghệ mới, chuyên sâu, thực tế.</h5>
+						<p>Bạn được học và trải nghiệm các công nghệ lập trình mới nhất, chuyên sâu, bám sát nhu cầu tuyển dụng thực tế từ doanh
+							nghiệp.
+						</p>
+					</div>
+					<div class="col-md-6 text-center lotrinh wow bounceInDown" data-wow-delay="1.5s">
+						<span class="icon mx-auto">
+							<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+						</span>
+						<h5 class="">Trao tay chìa khóa thành công toàn diện</h5>
+						<p>Hướng dẫn viết CV, phỏng vấn. Kết nối doanh nghiệp, gặp gỡ doanh nghiệp, phỏng vấn cùng doanh nghiệp ngay sau khi tốt
+							nghiệp.
+						</p>
+					</div>
+
+				</div>
+			</section>
+			<!-- Good -->
+		</div>
+	</div>
+	<!-- container -->
+
+	<!-- instructors -->
+	<section id="instructor">
+		<div class="container fadeInUp wow" data-wow-duration="1s" data-wow-delay="0.5s" id="content">
+			<div class="text-center divTitle">
+				<div class="title">Giảng Viên</div>
+				<h2 class="text-center">Giảng Viên</h2>
+				<p class="text-center font-weight-bold">
+					Học từ các giảng viên giỏi nhất trên thế giới</p>
+			</div>
+			<div class="row">
+
+
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-6">
+							<img class="img-fluid" src="./images/thaySong.jpg" alt="">
+						</div>
+						<div class="col-md-6">
+							<h3>SONG LÊ</h3>
+							<p>CEO Cyber Soft</p>
+							<p>Chuyên gia mọi thứ</p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-6">
+							<img class="img-fluid" src="./images/Mentor.jpg" alt="">
+						</div>
+						<div class="col-md-6">
+							<h3>KAITO KIDO</h3>
+							<p>Expert Developer</p>
+							<p>Chuyên gia NodeJs, C#, ASP.NET, Java, SQL Server, Oracle, DotNetNuke, Linq & Entity Framework</p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-6">
+							<img class="img-fluid" src="./images/trainer1.jpg" alt="">
+						</div>
+						<div class="col-md-6">
+							<h3>ANNA THOMAS</h3>
+							<p>Senior Developer</p>
+							<p>Chuyên gia C#, ASP.NET, Java, SQL Server, Oracle, DotNetNuke, Linq & Entity Framework</p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-6">
+							<img class="img-fluid" src="./images/trainer3.jpg" alt="">
+						</div>
+						<div class="col-md-6">
+							<h3>MIKE SANDERS</h3>
+							<p>Senior Developer</p>
+							<p>Chuyên gia C#, ASP.NET, Java, SQL Server, Oracle, DotNetNuke, Linq & Entity Framework</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- instructors -->
+
+	<!-- Container -->
+	<div class="container" id="content">
+		<!-- Category -->
+		<!-- <section id="category">
+			<div class="text-center divTitle">
+				<div class="title">Danh Mục</div>
+				<h2 class="text-center">Danh Mục</h2>
+			</div>
+
+		</section> -->
+		<!-- Category -->
+
+
+		<!-- Course -->
+		<section id="courses">
+			<div class="text-center divTitle fadeInUp wow" data-wow-duration="1s">
+				<div class="title">Khóa Học</div>
+				<h2 class="text-center">Khóa Học</h2>
+				<p class="text-center font-weight-bold">
+					Những khóa học chất lượng, thực tế, đáp ứng được mọi nhu cầu của nhà tuyển dụng.</p>
+				<ul id="loadList" class="row listCourse listCourseIndex">
+
+				</ul>
+				<div class="text-center mt-5">
+					<button id="XemAll">Xem tất cả khóa học</button>
+				</div>
+			</div>
+		</section>
+		<!-- Course -->
+	</div>
+	<!-- Container -->
+
+
+	<!-- Feel user-->
+	<section id="feel">
+		<div class="container fadeInUp wow" id="content" data-wow-duration="1s">
+			<div class="text-center divTitle">
+				<div class="title">Cảm Nhận Học Viên</div>
+				<h2 class="text-center">Cảm Nhận Học Viên</h2>
+				<p class="text-center font-weight-bold">Những người thực sự nói về Group One như thế nào.</p>
+			</div>
+
+			<div id="demo1" class="carousel slide" data-ride="carousel">
+
+				<!-- Indicators -->
+				<ul class="carousel-indicators">
+					<li data-target="#demo1" data-slide-to="0" class="active"></li>
+					<li data-target="#demo1" data-slide-to="1"></li>
+					<li data-target="#demo1" data-slide-to="2"></li>
+				</ul>
+
+				<!-- The slideshow -->
+				<div class="carousel-inner text-center">
+					<div class="carousel-item active">
+						<p>Suspendisse sollicitudin erat in metus varius, maximus rutrum purus condimentum. Phasellus
+							<br>quam libero, volutpat in sodales at, dignissim vel ipsum.</p>
+						<img class="img-fluid" src="./images/test1.jpg" alt="a">
+						<h5>Laura Chris</h5>
+						<p>Business man</p>
+
+					</div>
+					<div class="carousel-item">
+						<p>Suspendisse sollicitudin erat in metus varius, maximus rutrum purus condimentum. Phasellus
+							<br>quam libero, volutpat in sodales at, dignissim vel ipsum.</p>
+						<img class="img-fluid" src="./images/test2.jpg" alt="b">
+						<h5>Michael Paul</h5>
+						<p>Engineer</p>
+
+					</div>
+					<div class="carousel-item">
+						<p>Suspendisse sollicitudin erat in metus varius, maximus rutrum purus condimentum. Phasellus
+							<br>quam libero, volutpat in sodales at, dignissim vel ipsum.</p>
+						<img class="img-fluid" src="./images/test3.jpg" alt="c">
+						<h5>Willium Parker</h5>
+						<p>Designer</p>
+
+					</div>
+				</div>
+
+				<!-- Left and right controls -->
+				<a class="carousel-control-prev" href="#demo1" data-slide="prev">
+					<i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
+				</a>
+				<a class="carousel-control-next" href="#demo1" data-slide="next">
+					<i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i>
+				</a>
+
+			</div>
+
+
+		</div>
+	</section>
+	<!-- Feel user-->
+
+
+	<!-- LETTER -->
+	<div id="BodyBottom">
+		<div class="container wow bounceInDown" data-wow-delay="0.5s" data-wow-duration="1s" id="content">
+			<section id="lecter">
+				<div class="divLetter text-center">
+					<img class="img-fluid" src="./images/bg-newletter.png" alt="">
+					<p>
+						Đăng ký ngay bây giờ và nhận bản tin hàng tuần với các tài liệu mới, các khóa học mới, và nhiều hơn thế nữa!</p>
+					<p>
+						<span class="row">
+							<span class="col-9 text-right">
+								<input type="text" placeholder="Your Email">
+							</span>
+							<span class="col-3 text-left">
+								<button>SUBSCRIBE</button>
+							</span>
+						</span>
+
+
+					</p>
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- LETTER -->
+
+	</div>
+	<!-- Container -->
+
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h1>Group One</h1>
+					<p>Group One là học viện tiên phong tại Việt Nam áp dụng phương pháp đào tạo Active Learning và Flipped Learning thông
+						qua các dự án thực tiễn trong lĩnh vực đào tạo CNTT. Học viên sẽ đóng vai trò là một Scrum member trong mô hình Agile
+						để trở thành một lập trình chuyên nghiệp, đáp ứng mọi nhu cầu tuyển dụng của Doanh nghiệp</p>
+				</div>
+				<div class="col-md-1"></div>
+				<div class="col-md-3">
+					<h5>LIÊN HỆ</h5>
+					<ul>
+						<li>
+							<i class="fa fa-map-marker" aria-hidden="true"></i> 123 abc Hồ Chí Minh</li>
+						<li>
+							<i class="fa fa-phone" aria-hidden="true"></i> +84 123456</li>
+						<li>
+							<i class="fa fa-envelope-o" aria-hidden="true"></i> Course@edu.vn</li>
+					</ul>
+				</div>
+				<div class="col-md-1"></div>
+				<div class="col-md-3">
+					<h5>THÔNG TIN</h5>
+					<ul>
+						<li>
+							<a href=""> Khóa Học</a>
+						</li>
+						<li>
+							<a href=""> Giới Thiệu</a>
+						</li>
+						<li>
+							<a href="">Liên Hệ</a>
+						</li>
+						<li>
+							<a href="">FAQs</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<hr>
+			<div id="footer2" class="text-center">
+				<ul>
+					<li class="text-center">
+						<i class="fa fa-facebook"></i>
+					</li>
+					<li>
+						<i class="fa fa-google"></i>
+					</li>
+					<li>
+						<i class="fa fa-twitter"></i>
+					</li>
+				</ul>
+				<p>Copyright 2018. Designed by
+					<span class="name">Group One</span> Studio. All Rights Reserved.</p>
+			</div>
+
+		</div>
+		<button id="myBtn" title="Go to top">
+			<i class="fa fa-arrow-up fa-1x"></i>
+		</button>
+	</footer>
+
+<script type="text/javascript" src="vendors.js"></script><script type="text/javascript" src="bundleUser.js"></script></body>
+
+</html>
