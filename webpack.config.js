@@ -129,37 +129,37 @@ module.exports = {
         new HtmlWebpackPlugin({
             chunks: ['bundleUser', 'vendors'],
             template: './Views/indexUser.html',
-            filename: 'indexUser.ejs'
+            filename: 'indexUser.html'
         }),
         new HtmlWebpackPlugin({
             chunks: ['bundleAdmin','vendors'],
             template: './Views/indexAdmin.html',
-            filename: 'indexAdmin.ejs'
+            filename: 'indexAdmin.html'
         }),
         new HtmlWebpackPlugin({
             chunks: ['bundleLogin', 'vendors'],
             template: './Views/login.html',
-            filename: 'indexLogin.ejs'
+            filename: 'indexLogin.html'
         }),
         new HtmlWebpackPlugin({
             chunks: ['bundleRegister', 'vendors'],
             template: './Views/register.html',
-            filename: 'indexRegister.ejs'
+            filename: 'indexRegister.html'
         }),
         new HtmlWebpackPlugin({
             chunks: ['bundleCourse', 'vendors'],
             template: './Views/Course.html',
-            filename: 'indexCourse.ejs'
+            filename: 'indexCourse.html'
         }),
         new HtmlWebpackPlugin({
             chunks: ['bundleDetailCourse', 'vendors'],
             template: './Views/detailCourse.html',
-            filename: 'indexDetailCourse.ejs'
+            filename: 'indexDetailCourse.html'
         }),
         new HtmlWebpackPlugin({
             chunks: ['bundleUserDetail', 'vendors'],
             template: './Views/userDetail.html',
-            filename: 'userDetail.ejs'
+            filename: 'userDetail.html'
         }),
         // Extract CSS ra khoi bundle thanh file rieng
         new MiniCssExtractPlugin({
