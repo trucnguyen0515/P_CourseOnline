@@ -1,10 +1,14 @@
 {
+  "homepage": "http://trucnguyen0515.github.io/CourseOnline",
   "name": "mycourse",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "rimraf build && webpack --mode production",
+    "start":"node index.js"
   },
   "author": "",
   "license": "ISC",
