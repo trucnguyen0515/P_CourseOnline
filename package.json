@@ -16,7 +16,7 @@
     "bootstrap": "^4.2.1",
     "canvasjs": "^1.8.1",
     "compression": "^1.7.3",
-    "datatables.net": "^1.10.19",
+    "datatables.net": "^1.11.3",
     "datatables.net-dt": "^1.10.19",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
